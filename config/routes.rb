@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
   get "home/index"
+  get "bloque1", to: "home#bloque1"
+  get "bloque2", to: "home#bloque2"
+# Para Bloque 1
+get "mision", to: "home#mision"
+get "vision", to: "home#vision"
+get "valores", to: "home#valores"
+get "preguntas_b1", to: "home#preguntas_b1"
+
+# Para Bloque 2
+get "universidad", to: "home#universidad"
+get "transformacion", to: "home#transformacion"
+get "desigualdades", to: "home#desigualdades"
+get "vinculacion", to: "home#vinculacion"
+get "gobernanza", to: "home#gobernanza"
+get "infraestructura", to: "home#infraestructura"
+get "gestion_datos", to: "home#gestion_datos"
+get "preguntas_b2", to: "home#preguntas_b2"
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

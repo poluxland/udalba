@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Udalba" %></title>
+    <title>Claustro Académico 2025</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -13,16 +13,135 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
+
     <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+
     <link rel="apple-touch-icon" href="/icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+
+
+    <style>
+      body {
+        background-color: #e7f6f7;
+
+      }
+      .header-bar {
+        background-color:rgb(27, 35, 59);
+        color: white;
+        padding: 1rem;
+      }
+      .block {
+        background-color:rgb(27, 35, 59);
+        color: white;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+      }
+      footer a {
+        text-decoration: none;
+      }
+
+      footer img {
+        border: none;
+        text-decoration: none;
+      }
+      .footer {
+        background-color: rgb(11, 29, 64);
+        color: white;
+      }
+
+    </style>
   </head>
 
-  <body>
+
+
+
+
+
+ <body class="d-flex flex-column min-vh-100" >
+
+
+<div class="position-fixed" style="bottom: 80px; right: 20px; z-index: 1030;">
+  <div class="d-flex flex-column gap-2 align-items-end">
+    <%= link_to "⬆ Inicio", root_path, class: "btn btn-dark btn-sm" %>
+    <%= link_to "⬅ Atrás", :back, class: "btn btn-dark btn-sm" %>
+  </div>
+</div>
+
+
+
+
+<div class="header-bar px-4 py-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
+  <div class="d-flex align-items-center gap-3">
+    <%= link_to root_path, class: "d-flex align-items-center gap-3 text-decoration-none" do %>
+      <%= image_tag "logo.png", alt: "Logo UDALBA", height: 60 %>
+      <h1 class="mb-0 fs-5 text-white">Claustro Académico 2025</h1>
+    <% end %>
+  </div>
+
+  <nav class="d-flex gap-3">
+    <%= link_to "Objetivo Claustro", "/objetivo.pdf", target: "_blank", class: "text-white text-decoration-none" %>
+    <%= link_to "Información Institucional", "/INFORME2024.pdf", target: "_blank", class: "text-white text-decoration-none" %>
+    <%= link_to "Programa del Claustro", "/PED2023-2028.pdf", target: "_blank", class: "text-white text-decoration-none" %>
+  </nav>
+</div>
+
+
+
+
+
+
+  <main class="container my-5 text-center">
+    <h2 class="mb-4">Bienvenido <%= 'current_user&.email' || 'PEPITO' %>, ud participa en la mesa x</h2>
+<br>
+
     <%= yield %>
-  </body>
+  </main>
+
+
+
+
+
+
+
+
+
+<footer class="footer mt-auto py-3 text-white">
+  <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3 text-center">
+    <span class="me-3">Claustro Académico 2025</span>
+
+    <%= link_to "https://www.facebook.com/udelalba", target: "_blank", rel: "noopener", class: "footer-icon" do %>
+      <%= image_tag("facebook.png", alt: "", title: "Facebook", height: 24) %>
+    <% end %>
+
+    <%= link_to "https://www.instagram.com/udelalba", target: "_blank", rel: "noopener", class: "footer-icon" do %>
+      <%= image_tag("instagram.png", alt: "", title: "Instagram", height: 24) %>
+    <% end %>
+
+    <%= link_to "https://www.linkedin.com/school/universidaddelalba", target: "_blank", rel: "noopener", class: "footer-icon" do %>
+      <%= image_tag("linkedin.png", alt: "", title: "LinkedIn", height: 24) %>
+    <% end %>
+
+    <%= link_to "https://twitter.com/udalba_chile", target: "_blank", rel: "noopener", class: "footer-icon" do %>
+      <%= image_tag("x.png", alt: "", title: "X (Twitter)", height: 24) %>
+    <% end %>
+
+    <%= link_to "https://www.youtube.com/channel/UCtzb8MOdja78kFHQz9Th1Gw/featured", target: "_blank", rel: "noopener", class: "footer-icon" do %>
+      <%= image_tag("youtube.png", alt: "", title: "YouTube", height: 24) %>
+    <% end %>
+  </div>
+</footer>
+
+
+</body>
+
+
 </html>

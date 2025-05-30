@@ -1,7 +1,26 @@
-<div class="container mt-5">
-  <h1 class="display-4">Bienvenido a Udalba</h1>
-  <p class="lead">Tu aplicación Rails 8 con PostgreSQL y Bootstrap está lista para comenzar.</p>
-  <hr>
-  <p>Puedes comenzar creando tus modelos, controladores o componentes.</p>
-  <a href="#" class="btn btn-primary">Explorar</a>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-5 mx-auto">
+
+    <%= link_to bloque1_path, class: "text-decoration-none" do %>
+      <div class="block">
+        <h4>Bloque 1</h4>
+        <h5>Misión y Valores Institucionales</h5>
+      </div>
+    <% end %>
+
+    <%= link_to bloque2_path, class: "text-decoration-none" do %>
+      <div class="block">
+        <h4>Bloque 2</h4>
+        <h5>Pensando la Universidad al 2050</h5>
+      </div>
+    <% end %>
+
+  </div>
 </div>
+
+
