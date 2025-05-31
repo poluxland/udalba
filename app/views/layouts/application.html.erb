@@ -73,6 +73,7 @@
   <div class="d-flex flex-column gap-2 align-items-end">
     <%= link_to "⬆ Inicio", root_path, class: "btn btn-dark btn-sm" %>
     <%= link_to "⬅ Atrás", :back, class: "btn btn-dark btn-sm" %>
+    <%= link_to "⎋ Cerrar", session_path, data: { turbo_method: :delete }, class: "btn btn-dark btn-sm" %>
   </div>
 </div>
 
@@ -101,7 +102,7 @@
 
   <main class="container my-5 text-center">
    <% if Current.user %>
-  <h2 class="mb-4">Bienvenido <%= Current.user.email_address %>, ud participa en la mesa x</h2>
+  <h2 class="mb-4">Bienvenido <%= Current.user.full_name %>, ud participa en la mesa <%= Current.user.mesa %> <%= Current.user.campus %></h2>
 <% end %>
 
 <br>
