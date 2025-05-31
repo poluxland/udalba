@@ -80,8 +80,12 @@ test:
 production:
   primary:
     adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] %>
+    url: <%= ENV["DATABASE_URL"] %>
 
   queue:
     adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] %>
+    url: <%= ENV["DATABASE_URL"] %>
+
+  cable:
+    adapter: postgresql
+    url: <%= ENV["DATABASE_URL"] %>
