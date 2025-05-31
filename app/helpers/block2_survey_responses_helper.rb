@@ -1,0 +1,2 @@
+module Block2SurveyResponsesHelper
+end

@@ -1,0 +1,237 @@
+<%= form_with model: @survey_response, local: true, class: "container mt-4" do |f| %>
+  <h2 class="mb-4">Bloque 1: Misión, Visión y Valores Institucionales</h2>
+
+<div class="mb-4">
+  <h4>Conocimiento institucional</h4>
+
+  <div class="form-group d-flex justify-content-between align-items-center mb-2">
+    <label class="me-3">1. ¿Conoce usted la misión institucional de la Universidad del Alba?</label>
+    <%= f.select :q1, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+  </div>
+
+  <div class="form-group d-flex justify-content-between align-items-center mb-2">
+    <label class="me-3">2. ¿Conoce usted la visión institucional?</label>
+    <%= f.select :q2, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+  </div>
+
+  <div class="form-group d-flex justify-content-between align-items-center mb-2">
+    <label class="me-3">3. ¿Conoce los valores institucionales?</label>
+    <%= f.select :q3, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+  </div>
+</div>
+
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">
+    4. ¿Qué tan alineadas considera que están sus funciones con la misión institucional?
+  </label>
+<%= f.select :q4,
+  [
+    ["1 - Nada alineadas", "1 - Nada alineadas"],
+    ["2 - Poco alineadas", "2 - Poco alineadas"],
+    ["3 - Medianamente alineadas", "3 - Medianamente alineadas"],
+    ["4 - Bastante alineadas", "4 - Bastante alineadas"],
+    ["5 - Totalmente alineadas", "5 - Totalmente alineadas"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+  </div>
+
+
+
+
+    <h5 class="mt-4">Percepción sobre la educación multimodal</h5>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">5. ¿Cree que la misión considera la transformación digital?</label>
+  <%= f.select :q5, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">6. ¿Modalidades virtuales coherentes con la misión?</label>
+  <%= f.select :q6,
+  [
+    ["1 - Nada coherentes", "1 - Nada coherentes"],
+    ["2 - Poco coherentes", "2 - Poco coherentes"],
+    ["3 - Medianamente coherentes", "3 - Medianamente coherentes"],
+    ["4 - Bastante coherentes", "4 - Bastante coherentes"],
+    ["5 - Totalmente coherentes", "5 - Totalmente coherentes"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">7. ¿La multimodalidad fortalece la misión?</label>
+  <%= f.select :q7, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">8. ¿Debe explicitarse la multimodalidad en el proyecto educativo?</label>
+  <%= f.select :q8, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">9. ¿Enfoque apropiado para incorporar virtualidad?</label>
+  <%= f.select :q9, [
+    "Como una modalidad complementaria",
+    "Como una modalidad equivalente",
+    "Como principal para ciertos programas",
+    "No debería incorporarse"
+  ], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">10. ¿Debe fortalecer el compromiso con modalidades flexibles?</label>
+  <%= f.select :q10,
+  [
+    ["1 - Totalmente en desacuerdo", "1 - Totalmente en desacuerdo"],
+    ["2 - En desacuerdo", "2 - En desacuerdo"],
+    ["3 - Ni de acuerdo ni en desacuerdo", "3 - Ni de acuerdo ni en desacuerdo"],
+    ["4 - De acuerdo", "4 - De acuerdo"],
+    ["5 - Totalmente de acuerdo", "5 - Totalmente de acuerdo"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+
+<h5 class="mt-4">Coherencia con los principios formativos</h5>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">11. ¿La virtualidad contribuye a educación inclusiva y de calidad?</label>
+  <%= f.select :q11,
+  [
+    ["1 - Totalmente en desacuerdo", "1 - Totalmente en desacuerdo"],
+    ["2 - En desacuerdo", "2 - En desacuerdo"],
+    ["3 - Ni de acuerdo ni en desacuerdo", "3 - Ni de acuerdo ni en desacuerdo"],
+    ["4 - De acuerdo", "4 - De acuerdo"],
+    ["5 - Totalmente de acuerdo", "5 - Totalmente de acuerdo"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">12. ¿Formación multimodal favorece la equidad?</label>
+  <%= f.select :q12, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">13. ¿La virtualidad apoya compromiso social?</label>
+  <%= f.select :q13,
+  [
+    ["1 - Nada probable", "1 - Nada probable"],
+    ["2 - Poco probable", "2 - Poco probable"],
+    ["3 - Medianamente probable", "3 - Medianamente probable"],
+    ["4 - Probable", "4 - Probable"],
+    ["5 - Muy probable", "5 - Muy probable"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">14. ¿Importa explicitar innovación educativa en la visión?</label>
+  <%= f.select :q14, ["Sí", "No"], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">15. ¿Está de acuerdo con reflejar compromiso con responsabilidad social?</label>
+  <%= f.select :q15,
+  [
+    ["1 - Totalmente en desacuerdo", "1 - Totalmente en desacuerdo"],
+    ["2 - En desacuerdo", "2 - En desacuerdo"],
+    ["3 - Ni de acuerdo ni en desacuerdo", "3 - Ni de acuerdo ni en desacuerdo"],
+    ["4 - De acuerdo", "4 - De acuerdo"],
+    ["5 - Totalmente de acuerdo", "5 - Totalmente de acuerdo"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">16. ¿Qué tan importante es que la visión promueva el desarrollo del conocimiento?</label>
+  <%= f.select :q16,
+  [
+    ["1 - Nada importante", "1 - Nada importante"],
+    ["2 - Poco importante", "2 - Poco importante"],
+    ["3 - Medianamente importante", "3 - Medianamente importante"],
+    ["4 - Importante", "4 - Importante"],
+    ["5 - Muy importante", "5 - Muy importante"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+
+ <h5 class="mt-4">Priorización Estratégica</h5>
+
+<div class="form-group mb-3">
+  <label>
+    17. ¿Cuáles de los siguientes aspectos vinculados a la innovación institucional considera prioritarios para ser incorporados en la misión?
+    (Escriba hasta 2)<br>
+    <strong>Opciones:</strong> Aprendizaje multimodal, Transformación digital, Internacionalización, Sostenibilidad, Formación continua
+  </label>
+  <%= f.text_field :q17, class: "form-control form-control-sm mt-1" %>
+</div>
+
+<div class="form-group mb-3">
+  <label>
+    18. ¿Cuáles de los siguientes aspectos sociales y formativos considera prioritarios para ser incorporados en la misión?
+    (Escriba hasta 2)<br>
+    <strong>Opciones:</strong> Vínculo con comunidades, Diversidad e interculturalidad, Ciudadanía digital y ética, Investigación aplicada
+  </label>
+  <%= f.text_field :q18, class: "form-control form-control-sm mt-1" %>
+</div>
+
+
+
+   <h5 class="mt-4">Preguntas Abiertas</h5>
+
+<div class="form-group mb-3">
+  <label class="form-label">
+    1. ¿De qué forma la incorporación de modalidades multimodales (presencial, híbrida u online) puede contribuir a mejorar la pertinencia y calidad de la formación en la Universidad del Alba?
+  </label>
+  <%= f.text_area :q19, rows: 4, class: "form-control" %>
+</div>
+
+<div class="form-group mb-3">
+  <label class="form-label">
+    2. ¿Qué riesgos o desafíos podrían surgir si la misión institucional no reconoce explícitamente la transformación digital y la educación multimodal (presencial, híbrida u online)?
+  </label>
+  <%= f.text_area :q20, rows: 4, class: "form-control" %>
+</div>
+
+
+    <h5 class="mt-4">Integridad como valor institucional</h5>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">1. ¿Está de acuerdo con incorporar integridad como valor?</label>
+  <%= f.select :q21,
+  [
+    ["1 - Totalmente en desacuerdo", "1 - Totalmente en desacuerdo"],
+    ["2 - En desacuerdo", "2 - En desacuerdo"],
+    ["3 - Ni de acuerdo ni en desacuerdo", "3 - Ni de acuerdo ni en desacuerdo"],
+    ["4 - De acuerdo", "4 - De acuerdo"],
+    ["5 - Totalmente de acuerdo", "5 - Totalmente de acuerdo"]
+  ],
+  {}, class: "form-select form-select-sm w-auto" %>
+
+</div>
+
+<div class="form-group d-flex justify-content-between align-items-center mb-2">
+  <label class="me-3">2. ¿Está alineado con la misión y visión?</label>
+  <%= f.select :q22, ["Sí", "No", "No estoy seguro/a"], {}, class: "form-select form-select-sm w-auto" %>
+</div>
+
+<h5 class="mt-4">Reflexión final</h5>
+<div class="form-group mb-3">
+<label class="form-label">
+1. ¿Cómo cree usted que la integridad puede reforzar los valores actuales de inclusividad, solidaridad y humanidad en la Universidad del Alba?
+</label>
+<%= f.text_area :q23, rows: 4, class: "form-control" %>
+</div>
+
+
+  <%= f.submit "Enviar formulario", class: "btn btn-primary mt-3" %>
+<% end %>

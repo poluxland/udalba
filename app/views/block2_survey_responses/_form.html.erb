@@ -1,0 +1,100 @@
+<%= form_with(model: block2_survey_response, local: true, class: "container mt-4") do |f| %>
+  <h4 class="mb-3">Preguntas Cerradas</h4>
+
+  <div class="mb-3">
+  <label class="form-label">
+    1. En el año 2050, la Universidad del Alba debiera ser una institución cocreadora de conocimiento junto a comunidades, estudiantes y empresas.
+  </label>
+  <%= f.select :q1, [
+      ["1 - Totalmente en desacuerdo", "1 - Totalmente en desacuerdo"],
+      ["2 - En desacuerdo", "2 - En desacuerdo"],
+      ["3 - Ni de acuerdo ni en desacuerdo", "3 - Ni de acuerdo ni en desacuerdo"],
+      ["4 - De acuerdo", "4 - De acuerdo"],
+      ["5 - Totalmente de acuerdo", "5 - Totalmente de acuerdo"]
+    ], {}, class: "form-select" %>
+</div>
+
+<div class="mb-3">
+  <label class="form-label">
+    2. El enfoque interdisciplinario será esencial en la formación de profesionales universitarios hacia el año 2050.
+  </label>
+  <%= f.select :q2, [
+      ["1 - Nada importante", "1 - Nada importante"],
+      ["2 - Poco importante", "2 - Poco importante"],
+      ["3 - Medianamente importante", "3 - Medianamente importante"],
+      ["4 - Importante", "4 - Importante"],
+      ["5 - Muy importante", "5 - Muy importante"]
+    ], {}, class: "form-select" %>
+</div>
+
+<div class="mb-3">
+  <label class="form-label">
+    3. La educación personalizada será un componente clave de la formación universitaria hacia el año 2050.
+  </label>
+  <%= f.select :q3, [
+      ["1 - Nada importante", "1 - Nada importante"],
+      ["2 - Poco importante", "2 - Poco importante"],
+      ["3 - Medianamente importante", "3 - Medianamente importante"],
+      ["4 - Importante", "4 - Importante"],
+      ["5 - Muy importante", "5 - Muy importante"]
+    ], {}, class: "form-select" %>
+</div>
+
+<div class="mb-3">
+  <label class="form-label">
+    4. La sostenibilidad ambiental debe ser considerada una prioridad en la infraestructura universitaria al año 2050.
+  </label>
+  <%= f.select :q4, [
+      ["1 - Nada relevante", "1 - Nada relevante"],
+      ["2 - Poco relevante", "2 - Poco relevante"],
+      ["3 - Medianamente relevante", "3 - Medianamente relevante"],
+      ["4 - Relevante", "4 - Relevante"],
+      ["5 - Muy relevante", "5 - Muy relevante"]
+    ], {}, class: "form-select" %>
+</div>
+
+<div class="mb-3">
+  <label class="form-label">
+    5. La Universidad del Alba debe adoptar un modelo de gobernanza más ágil, participativo y adaptable a los cambios hacia 2050.
+  </label>
+  <%= f.select :q5, [
+      ["1 - Totalmente en desacuerdo", "1 - Totalmente en desacuerdo"],
+      ["2 - En desacuerdo", "2 - En desacuerdo"],
+      ["3 - Ni de acuerdo ni en desacuerdo", "3 - Ni de acuerdo ni en desacuerdo"],
+      ["4 - De acuerdo", "4 - De acuerdo"],
+      ["5 - Totalmente de acuerdo", "5 - Totalmente de acuerdo"]
+    ], {}, class: "form-select" %>
+</div>
+
+
+  <div class="mb-3">
+    <label class="form-label">
+      6. ¿Considera que los entornos inmersivos (realidad virtual o aumentada) tendrán un rol importante en la educación del futuro?
+    </label>
+    <%= f.select :q6, ["Sí", "No", "No estoy seguro(a)"], {}, class: "form-select" %>
+  </div>
+
+  <h4 class="mt-4 mb-3">Preguntas Abiertas</h4>
+
+  <div class="mb-3">
+    <label class="form-label">1. ¿Qué tipo de institución queremos que sea la Universidad del Alba en el año 2050 y qué papel debiera cumplir?</label>
+    <%= f.text_area :qoa1, rows: 4, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">2. ¿Qué transformaciones debemos comenzar hoy para construir esa universidad del futuro?</label>
+    <%= f.text_area :qoa2, rows: 4, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">3. ¿Qué valores o principios fundamentales no deberían perderse hacia el 2050?</label>
+    <%= f.text_area :qoa3, rows: 4, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">4. ¿Qué innovaciones, prácticas o modelos de otras universidades nos inspiran para pensar el futuro de la Universidad del Alba?</label>
+    <%= f.text_area :qoa4, rows: 4, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Enviar respuestas", class: "btn btn-primary mt-3" %>
+<% end %>

@@ -1,0 +1,67 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  q1: MyString
+  q2: MyString
+  q3: MyString
+  q4: 1
+  q5: MyString
+  q6: 1
+  q7: MyString
+  q8: MyString
+  q9: MyString
+  q10: 1
+  q11: 1
+  q12: MyString
+  q13: 1
+  q14: MyString
+  q15: 1
+  q16: 1
+  q17a: false
+  q17b: false
+  q17c: false
+  q17d: false
+  q17e: false
+  q18f: false
+  q18g: false
+  q18h: false
+  q18i: false
+  qoa1: MyText
+  qoa2: MyText
+  q19: 1
+  q20: MyString
+  qoa3: MyText
+
+two:
+  user: two
+  q1: MyString
+  q2: MyString
+  q3: MyString
+  q4: 1
+  q5: MyString
+  q6: 1
+  q7: MyString
+  q8: MyString
+  q9: MyString
+  q10: 1
+  q11: 1
+  q12: MyString
+  q13: 1
+  q14: MyString
+  q15: 1
+  q16: 1
+  q17a: false
+  q17b: false
+  q17c: false
+  q17d: false
+  q17e: false
+  q18f: false
+  q18g: false
+  q18h: false
+  q18i: false
+  qoa1: MyText
+  qoa2: MyText
+  q19: 1
+  q20: MyString
+  qoa3: MyText

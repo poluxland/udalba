@@ -100,7 +100,10 @@
 
 
   <main class="container my-5 text-center">
-    <h2 class="mb-4">Bienvenido <%= 'current_user&.email' || 'PEPITO' %>, ud participa en la mesa x</h2>
+   <% if Current.user %>
+  <h2 class="mb-4">Bienvenido <%= Current.user.email_address %>, ud participa en la mesa x</h2>
+<% end %>
+
 <br>
 
     <%= yield %>

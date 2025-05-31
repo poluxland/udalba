@@ -1,0 +1,40 @@
+<h1>Respuestas de Encuesta</h1>
+
+<table class="table table-bordered table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Fecha</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Q5</th>
+      <th>Q6</th>
+      <th>Q7</th>
+      <th>Q8</th>
+      <th>...</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @survey_responses.each do |response| %>
+      <tr>
+        <td><%= response.user.email_address %></td>
+        <td><%= l(response.created_at, format: :short) %></td>
+        <td><%= response.q1 %></td>
+        <td><%= response.q2 %></td>
+        <td><%= response.q3 %></td>
+        <td><%= response.q4 %></td>
+        <td><%= response.q5 %></td>
+        <td><%= response.q6 %></td>
+        <td><%= response.q7 %></td>
+        <td><%= response.q8 %></td>
+        <td>...</td>
+        <td>
+          <%= link_to "Ver", survey_response_path(response), class: "btn btn-sm btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

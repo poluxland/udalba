@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 20vh;">
+  <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= form_with url: session_path, html: { class: "needs-validation", novalidate: true } do |form| %>
+      <div class="mb-3">
+        <%= form.label :email_address, "Correo electrónico", class: "form-label" %>
+        <%= form.email_field :email_address, class: "form-control", required: true, autofocus: true, autocomplete: "username", placeholder: "Ingrese su correo", value: params[:email_address] %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password, "Contraseña", class: "form-label" %>
+        <%= form.password_field :password, class: "form-control", required: true, autocomplete: "current-password", placeholder: "Ingrese su contraseña", maxlength: 72 %>
+      </div>
+
+      <%= form.submit "Iniciar sesión", class: "btn btn-primary w-100" %>
+    <% end %>
+
+    <%# <%= link_to "Forgot password?", new_password_path, class: "d-block mt-2 text-center" %>
+
+  </div>
+</div>

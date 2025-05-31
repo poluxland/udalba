@@ -1,0 +1,105 @@
+
+
+<div class="container mt-4 text-start">
+  <h2 class="mb-4">Respuestas de la Encuesta</h2>
+
+ <h4 class="mt-4">Conocimiento institucional</h4>
+<ul>
+  <li><strong>1. ¿Conoce usted la misión institucional de la Universidad del Alba?</strong><br>
+    <%= @survey_response.q1 %></li>
+  <li><strong>2. ¿Conoce usted la visión institucional?</strong><br>
+    <%= @survey_response.q2 %></li>
+  <li><strong>3. ¿Conoce los valores institucionales?</strong><br>
+    <%= @survey_response.q3 %></li>
+  <li><strong>4. ¿Qué tan alineadas considera que están sus funciones con la misión institucional?</strong><br>
+    <%= @survey_response.q4 %></li>
+</ul>
+
+
+<h4 class="mt-4">Percepción sobre la educación multimodal</h4>
+<ul>
+  <li><strong>5. ¿Cree que la misión considera la transformación digital?</strong><br>
+    <%= @survey_response.q5 %></li>
+  <li><strong>6. ¿Modalidades virtuales coherentes con la misión?</strong><br>
+    <%= @survey_response.q6 %></li>
+  <li><strong>7. ¿La multimodalidad fortalece la misión?</strong><br>
+    <%= @survey_response.q7 %></li>
+  <li><strong>8. ¿Debe explicitarse la multimodalidad en el proyecto educativo?</strong><br>
+    <%= @survey_response.q8 %></li>
+  <li><strong>9. ¿Enfoque apropiado para incorporar virtualidad?</strong><br>
+    <%= @survey_response.q9 %></li>
+  <li><strong>10. ¿Debe fortalecer el compromiso con modalidades flexibles?</strong><br>
+    <%= @survey_response.q10 %></li>
+</ul>
+
+
+ <h4 class="mt-4">Coherencia con los principios formativos</h4>
+<ul>
+  <li><strong>11. ¿La virtualidad contribuye a educación inclusiva y de calidad?</strong><br>
+    <%= @survey_response.q11 %></li>
+  <li><strong>12. ¿Formación multimodal favorece la equidad?</strong><br>
+    <%= @survey_response.q12 %></li>
+  <li><strong>13. ¿La virtualidad apoya compromiso social?</strong><br>
+    <%= @survey_response.q13 %></li>
+  <li><strong>14. ¿Importa explicitar innovación educativa en la visión?</strong><br>
+    <%= @survey_response.q14 %></li>
+  <li><strong>15. ¿Está de acuerdo con reflejar compromiso con responsabilidad social?</strong><br>
+    <%= @survey_response.q15 %></li>
+  <li><strong>16. ¿Qué tan importante es que la visión promueva el desarrollo del conocimiento?</strong><br>
+     <%= @survey_response.q16 %></li>
+</ul>
+
+
+  <h4 class="mt-4">Priorización Estratégica</h4>
+<ul>
+  <li>
+    <strong>17. ¿Cuáles de los siguientes aspectos vinculados a la innovación institucional considera prioritarios para ser incorporados en la misión?</strong><br>
+    (Escriba hasta 2)<br>
+    <strong>Opciones:</strong> Aprendizaje multimodal, Transformación digital, Internacionalización, Sostenibilidad, Formación continua<br>
+    <%= @survey_response.q17 %>
+  </li>
+  <li class="mt-3">
+    <strong>18. ¿Cuáles de los siguientes aspectos sociales y formativos considera prioritarios para ser incorporados en la misión?</strong><br>
+    (Escriba hasta 2)<br>
+    <strong>Opciones:</strong> Vínculo con comunidades, Diversidad e interculturalidad, Ciudadanía digital y ética, Investigación aplicada<br>
+    <%= @survey_response.q18 %>
+  </li>
+</ul>
+
+
+ <h4 class="mt-4">Preguntas Abiertas</h4>
+<ul>
+  <li class="mb-3">
+    <strong>1. ¿De qué forma la incorporación de modalidades multimodales (presencial, híbrida u online) puede contribuir a mejorar la pertinencia y calidad de la formación en la Universidad del Alba?</strong><br>
+    <%= @survey_response.q19 %>
+  </li>
+  <li class="mb-3">
+    <strong>2. ¿Qué riesgos o desafíos podrían surgir si la misión institucional no reconoce explícitamente la transformación digital y la educación multimodal (presencial, híbrida u online)?</strong><br>
+    <%= simple_format(@survey_response.q20) %>
+  </li>
+</ul>
+
+
+<h4 class="mt-4">Integridad como valor institucional</h4>
+<ul>
+  <li><strong>1. ¿Está de acuerdo con incorporar integridad como valor?</strong><br>
+    <%= @survey_response.q21 %>
+  </li>
+  <li><strong>2. ¿Está alineado con la misión y visión?</strong><br>
+    <%= @survey_response.q22 %>
+  </li>
+
+</ul>
+
+<h4 class="mt-4">Reflexión final</h4>
+<div class="mb-3">
+  <strong>1. ¿Cómo cree usted que la integridad puede reforzar los valores actuales de inclusividad, solidaridad y humanidad en la Universidad del Alba?</strong><br>
+  <%= simple_format(@survey_response.q23) %>
+</div>
+
+
+
+  <%= link_to 'Editar respuestas', edit_survey_response_path(@survey_response), class: "btn btn-primary mt-3 ms-2" %>
+
+  <%= link_to 'Volver', survey_responses_path, class: "btn btn-secondary mt-3" %>
+</div>

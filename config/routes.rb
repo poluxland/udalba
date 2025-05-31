@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :users, only: [ :index ]
+  resources :block2_survey_responses, except: [ :destroy ]
+  resources :survey_responses, only: [ :index, :show, :new, :create, :edit, :update ]
+  resource :session
+  resources :passwords, param: :token
   get "home/index"
   get "bloque1", to: "home#bloque1"
   get "bloque2", to: "home#bloque2"
