@@ -1,0 +1,52 @@
+<div class="container py-4">
+
+  <h1 class="mb-4">En una palabra, ¿cómo visualiza la Universidad en el 2050?</h1>
+
+  <%= form_with url: words_path, method: :post, data: { turbo: false }, local: true, html: { class: "row g-2 align-items-center" } do |form| %>
+
+    <div class="col-auto">
+      <%= form.label :content, "Palabra", class: "col-form-label" %>
+    </div>
+    <div class="col-auto">
+      <%= form.text_field :content, class: "form-control form-control-sm", placeholder: "Ej: innovación", required: true %>
+    </div>
+    <div class="col-auto">
+      <%= form.submit "Agregar", class: "btn btn-primary btn-sm" %>
+    </div>
+  <% end %>
+
+  <hr class="my-4">
+
+
+  <% if @words.any? %>
+   <canvas id="wordCloudCanvas" width="900" height="500" class="border"></canvas>
+
+  <% else %>
+    <p class="text-muted">Aún no hay palabras ingresadas.</p>
+  <% end %>
+
+</div>
+
+<%= javascript_include_tag "https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js" %>
+
+<%= javascript_tag do %>
+  const renderCloud = () => {
+    const words = <%= raw @words.group_by(&:content).map { |word, group| [word, group.count] }.to_json %>;
+
+    WordCloud(document.getElementById('wordCloudCanvas'), {
+      list: words,
+      gridSize: 18,
+      weightFactor: 40,
+      fontFamily: 'Average, Times, serif',
+      color: function() {
+        return (['#d0d0d0', '#e11', '#44f'])[Math.floor(Math.random() * 3)];
+      },
+      backgroundColor: '#333'
+    });
+  };
+
+  document.addEventListener("turbo:load", renderCloud);
+<% end %>
+
+
+
