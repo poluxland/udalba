@@ -28,7 +28,7 @@
 </div>
 
 
-<% if current_user&.admin? %>
+<% if Current.user&.admin? %>
   <hr class="my-4">
   <h4>Palabras registradas</h4>
   <ul class="list-group">
@@ -48,7 +48,7 @@
   const renderCloud = () => {
     <%
   grouped_words = @words.group_by(&:content).map { |word, group| [word, group.count] }
-  max_weight = 10
+  max_weight = 5
   normalized_words = grouped_words.map { |word, count| [word, [count, max_weight].min] }
 %>
 
@@ -57,8 +57,8 @@ const words = <%= raw normalized_words.to_json %>;
 
     WordCloud(document.getElementById('wordCloudCanvas'), {
       list: words,
-      gridSize: 18,
-      weightFactor: 30,
+      gridSize: 20,
+      weightFactor: 20,
       fontFamily: 'Average, Times, serif',
       color: function() {
         return (['#d0d0d0', '#e11', '#44f'])[Math.floor(Math.random() * 3)];
