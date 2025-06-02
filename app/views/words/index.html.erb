@@ -27,16 +27,38 @@
 
 </div>
 
+
+<% if current_user&.admin? %>
+  <hr class="my-4">
+  <h4>Palabras registradas</h4>
+  <ul class="list-group">
+    <% @words.each do |word| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= word.content %>
+        <span class="badge bg-secondary rounded-pill"><%= word.created_at.strftime("%d-%m-%Y %H:%M") %></span>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js" %>
 
 <%= javascript_tag do %>
   const renderCloud = () => {
-    const words = <%= raw @words.group_by(&:content).map { |word, group| [word, group.count] }.to_json %>;
+    <%
+  grouped_words = @words.group_by(&:content).map { |word, group| [word, group.count] }
+  max_weight = 10
+  normalized_words = grouped_words.map { |word, count| [word, [count, max_weight].min] }
+%>
+
+const words = <%= raw normalized_words.to_json %>;
+
 
     WordCloud(document.getElementById('wordCloudCanvas'), {
       list: words,
       gridSize: 18,
-      weightFactor: 40,
+      weightFactor: 30,
       fontFamily: 'Average, Times, serif',
       color: function() {
         return (['#d0d0d0', '#e11', '#44f'])[Math.floor(Math.random() * 3)];
