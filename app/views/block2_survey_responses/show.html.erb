@@ -28,7 +28,7 @@
       <%= @block2_survey_response.q6 %>
     </li>
   </ul>
-
+<% if Current.user.admin? || Current.user.supervisor? %>
   <h4 class="mt-4">Preguntas Abiertas</h4>
   <div class="mb-3">
     <strong>1. Si pensamos en la Universidad del Alba en el año 2050: ¿Qué tipo de institución queremos que sea y qué papel debiera cumplir en la sociedad?</strong>
@@ -46,7 +46,7 @@
     <strong>4. ¿Qué innovaciones, prácticas o modelos de otras universidades (en Chile o el mundo) nos inspiran para pensar en el futuro de la Universidad del Alba?</strong>
     <p><%= simple_format(@block2_survey_response.qoa4) %></p>
   </div>
-
+<% end %>
   <div class="mt-3">
     <%= link_to 'Editar', edit_block2_survey_response_path(@block2_survey_response), class: "btn btn-primary me-2" %>
     <%= link_to 'Volver', block2_survey_responses_path, class: "btn btn-secondary" %>

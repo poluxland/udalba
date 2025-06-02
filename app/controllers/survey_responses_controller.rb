@@ -1,4 +1,5 @@
 class SurveyResponsesController < ApplicationController
+  before_action :require_admin, only: [ :index ]
   def new
     if Current.user.survey_response.present?
       redirect_to survey_response_path(Current.user.survey_response), notice: "Ya has respondido la encuesta."
@@ -39,6 +40,13 @@ class SurveyResponsesController < ApplicationController
   end
 
   private
+
+  def require_admin
+    unless Current.user&.admin?
+      redirect_to root_path, alert: "Acceso restringido solo para administradores."
+    end
+  end
+
 
   def survey_response_params
     params.require(:survey_response).permit(

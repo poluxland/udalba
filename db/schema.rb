@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_31_020644) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_02_013047) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -95,6 +95,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_31_020644) do
     t.integer "mesa"
     t.string "campus"
     t.string "area"
+    t.boolean "admin", default: false, null: false
+    t.boolean "supervisor", default: false, null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

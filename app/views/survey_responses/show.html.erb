@@ -67,6 +67,17 @@
 </ul>
 
 
+<h4 class="mt-4">Integridad como valor institucional</h4>
+<ul>
+  <li><strong>1. ¿Está de acuerdo con incorporar integridad como valor?</strong><br>
+    <%= @survey_response.q21 %>
+  </li>
+  <li><strong>2. ¿Está alineado con la misión y visión?</strong><br>
+    <%= @survey_response.q22 %>
+  </li>
+</ul>
+
+<% if Current.user.admin? || Current.user.supervisor? %>
  <h4 class="mt-4">Preguntas Abiertas</h4>
 <ul>
   <li class="mb-3">
@@ -80,23 +91,15 @@
 </ul>
 
 
-<h4 class="mt-4">Integridad como valor institucional</h4>
-<ul>
-  <li><strong>1. ¿Está de acuerdo con incorporar integridad como valor?</strong><br>
-    <%= @survey_response.q21 %>
-  </li>
-  <li><strong>2. ¿Está alineado con la misión y visión?</strong><br>
-    <%= @survey_response.q22 %>
-  </li>
 
-</ul>
+
 
 <h4 class="mt-4">Reflexión final</h4>
 <div class="mb-3">
   <strong>1. ¿Cómo cree usted que la integridad puede reforzar los valores actuales de inclusividad, solidaridad y humanidad en la Universidad del Alba?</strong><br>
   <%= simple_format(@survey_response.q23) %>
 </div>
-
+<% end %>
 
 
   <%= link_to 'Editar respuestas', edit_survey_response_path(@survey_response), class: "btn btn-primary mt-3 ms-2" %>

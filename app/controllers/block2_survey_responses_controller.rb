@@ -1,4 +1,5 @@
 class Block2SurveyResponsesController < ApplicationController
+  before_action :require_admin, only: [ :index ]
   def new
     if Current.user.block2_survey_response.present?
       redirect_to block2_survey_response_path(Current.user.block2_survey_response), notice: "Ya has respondido esta encuesta."
@@ -39,6 +40,13 @@ class Block2SurveyResponsesController < ApplicationController
 
 
   private
+
+
+  def require_admin
+    unless Current.user&.admin?
+      redirect_to root_path, alert: "Acceso restringido solo para administradores."
+    end
+  end
 
   def block2_survey_response_params
     params.require(:block2_survey_response).permit(:q1, :q2, :q3, :q4, :q5, :q6, :qoa1, :qoa2, :qoa3, :qoa4)

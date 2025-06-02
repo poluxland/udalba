@@ -12,6 +12,8 @@
       <th>Mesa</th>
       <th>Sede</th>
       <th>Área</th>
+      <th>Sup</th>
+      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +28,9 @@
         <td><%= user.mesa %></td>
         <td><%= user.campus %></td>
         <td><%= user.area %></td>
+        <td><%= user.supervisor ? "✅" : "❌" %></td>
+<td><%= user.admin ? "✅" : "❌" %></td>
+
       </tr>
     <% end %>
   </tbody>
