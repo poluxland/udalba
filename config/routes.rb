@@ -23,6 +23,7 @@ get "gobernanza", to: "home#gobernanza"
 get "infraestructura", to: "home#infraestructura"
 get "gestion_datos", to: "home#gestion_datos"
 get "preguntas_b2", to: "home#preguntas_b2"
+get "documentos", to: "home#documentos"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

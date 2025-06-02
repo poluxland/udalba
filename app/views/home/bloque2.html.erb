@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-5 mx-auto">
 
+ <p class="text-center fs-5 fw-medium my-4 text-secondary">
+      Te invitamos a revisar los siguientes contenidos para ayudar a la reflexión en tu mesa de trabajo
+    </p>
     <%= link_to universidad_path, class: "text-decoration-none" do %>
       <div class="block"><h4>Universidad y conocimiento</h4></div>
     <% end %>
@@ -29,8 +32,8 @@
       <div class="block"><h4>Gestión y análisis de datos</h4></div>
     <% end %>
 
-   <p class="text-center fs-5 fw-medium my-4 text-secondary">
-      Una vez realizado el trabajo de mesa y revisados los contenidos, te invitamos a responder algunas preguntas sobre los temas tratados:
+    <p class="text-center fs-5 fw-medium my-4 text-secondary">
+      Una vez revisada la información, debes contestar las siguientes preguntas
     </p>
 
  <%= link_to new_block2_survey_response_path, class: "text-decoration-none" do %>

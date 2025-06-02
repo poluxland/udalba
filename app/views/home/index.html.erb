@@ -1,10 +1,13 @@
-
-
-
-
-
 <div class="row">
   <div class="col-md-5 mx-auto">
+
+        <%= link_to words_path, class: "text-decoration-none" do %>
+      <div class="block shadow bg-danger">
+        <h4>En una palabra</h4>
+        <h5>¿Cómo sería Chile sin la Universidad del Alba?</h5>
+      </div>
+    <% end %>
+
 
     <%= link_to bloque1_path, class: "text-decoration-none" do %>
       <div class="block shadow">
@@ -20,77 +23,6 @@
       </div>
     <% end %>
 
-<%= link_to words_path, class: "text-decoration-none" do %>
-  <div class="block shadow bg-danger">
-    <h4>En una palabra</h4>
-    <h5>¿Cómo visualiza la Universidad en el 2050?</h5>
-  </div>
-<% end %>
 
   </div>
 </div>
-
-<!-- Botón o enlace que abre el popup -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#programaModal">
-  Ver Programa
-</button>
-
-<!-- Modal Bootstrap -->
-<div class="modal fade" id="programaModal" tabindex="-1" aria-labelledby="programaModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="programaModalLabel">Programa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body text-center">
-        <%= image_tag("programa.jpeg", class: "img-fluid") %>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Botón para abrir el modal -->
-<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#objetivoModal">
-  Ver Objetivo del Claustro
-</button>
-
-<!-- Modal con texto -->
-<div class="modal fade" id="objetivoModal" tabindex="-1" aria-labelledby="objetivoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content shadow">
-      <div class="modal-header bg-secondary text-white">
-        <h5 class="modal-title" id="objetivoModalLabel">Objetivo del Claustro</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <p>
-          El objetivo de un claustro académico es reunir a la comunidad académica (Directivos,
-          administrativos, profesores, estudiantes y egresados) de la Universidad del Alba, para reflexionar
-          colectivamente sobre aspectos fundamentales de la vida universitaria.
-        </p>
-
-        <h6 class="fw-bold mt-4">Objetivos principales de un claustro académico:</h6>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong>Evaluación y proyección institucional:</strong>
-            Analizar el estado actual de la Universidad del Alba, sus logros, desafíos y proyecciones
-            estratégicas en áreas sensibles para su quehacer institucional.
-          </li>
-          <li class="list-group-item">
-            <strong>Participación de la comunidad:</strong>
-            Fomentar un espacio de diálogo donde los miembros de todos los estamentos de la universidad
-            puedan expresar opiniones, propuestas y preocupaciones sobre el devenir de nuestra institución.
-          </li>
-          <li class="list-group-item">
-            <strong>Innovación y mejora continua:</strong>
-            Impulsar propuestas para innovar en nuestro trabajo, incorporando nuevas tecnologías, modelos y
-            estrategias de gestión y de calidad.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-

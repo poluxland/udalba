@@ -90,11 +90,24 @@
     <% end %>
   </div>
 
-  <nav class="d-flex gap-3">
-    <%= link_to "PED 2023-2028", "/PED2023-2028.pdf", target: "_blank", class: "text-white text-decoration-none" %>
-    <%= link_to "Orientacion actualización PED", "/orientaciones.pdf", target: "_blank", class: "text-white text-decoration-none" %>
-    <%= link_to "Análisis institucional 2024", "/INFORME2024.pdf", target: "_blank", class: "text-white text-decoration-none" %>
-  </nav>
+<div class="d-flex gap-2">
+
+    <!-- Botón Objetivo -->
+  <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#objetivoModal">
+    Objetivo del Claustro
+  </button>
+
+
+<!-- Botón Documentos -->
+  <%= link_to "Información institucional", documentos_path, class: "btn btn-outline-light btn-sm" %>
+
+  <!-- Botón Programa -->
+  <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#programaModal">
+    Programa Claustro
+  </button>
+
+</div>
+
 </div>
 
 
@@ -146,6 +159,51 @@
     <% end %>
   </div>
 </footer>
+
+<!-- Modal: Ver Programa -->
+<div class="modal fade" id="programaModal" tabindex="-1" aria-labelledby="programaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="programaModalLabel">Programa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <%= image_tag("programa.jpeg", class: "img-fluid") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal con texto -->
+<div class="modal fade" id="objetivoModal" tabindex="-1" aria-labelledby="objetivoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-secondary text-white">
+        <h5 class="modal-title" id="objetivoModalLabel">Objetivos del Claustro Académico</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <h6 class="fw-bold mb-3">Objetivos principales del claustro académico</h6>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Evaluación y proyección institucional:</strong>
+            Analizar el estado actual de la Universidad del Alba, sus logros, desafíos y proyecciones estratégicas en áreas sensibles para su quehacer institucional.
+          </li>
+          <li class="list-group-item">
+            <strong>Participación de la comunidad:</strong>
+            Fomentar un espacio de diálogo donde los miembros de todos los estamentos de la universidad puedan expresar opiniones, propuestas y preocupaciones sobre el devenir de nuestra institución.
+          </li>
+          <li class="list-group-item">
+            <strong>Innovación y mejora continua:</strong>
+            Impulsar propuestas para innovar en nuestro trabajo, incorporando nuevas tecnologías, modelos y estrategias de gestión y de calidad.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 </body>
