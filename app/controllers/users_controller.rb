@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_admin, only: [ :index ]
   def index
-    @users = User.order(:full_name)
+    @users = User.order(:campus)
   end
 
 
