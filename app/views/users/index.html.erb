@@ -39,7 +39,14 @@
         <td><%= user.area %></td>
         <td><%= user.supervisor ? "✅" : "❌" %></td>
 <td><%= user.admin ? "✅" : "❌" %></td>
-<td><%= user.locked? ? "🔒" : "🔓" %></td>
+<td>
+  <% if user.locked? %>
+    <i class="bi bi-lock-fill text-danger"></i>
+  <% else %>
+    <i class="bi bi-unlock-fill text-success"></i>
+  <% end %>
+</td>
+
 
 
       </tr>
