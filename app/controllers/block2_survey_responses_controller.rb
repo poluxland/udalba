@@ -1,5 +1,8 @@
 class Block2SurveyResponsesController < ApplicationController
   before_action :require_admin, only: [ :index ]
+  before_action :set_block2_survey_response, only: [ :show, :edit, :update ]
+  before_action :prevent_locked_edit, only: [ :edit, :update ]
+
   def new
     if Current.user.block2_survey_response.present?
       redirect_to block2_survey_response_path(Current.user.block2_survey_response), notice: "Ya has respondido esta encuesta."
@@ -17,20 +20,11 @@ class Block2SurveyResponsesController < ApplicationController
     end
   end
 
-  def show
-    @block2_survey_response = Block2SurveyResponse.find(params[:id])
-  end
+  def show; end
 
-  def index
-    @block2_survey_responses = Block2SurveyResponse.includes(:user).order(created_at: :desc)
-  end
-
-  def edit
-    @block2_survey_response = Block2SurveyResponse.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @block2_survey_response = Block2SurveyResponse.find(params[:id])
     if @block2_survey_response.update(block2_survey_response_params)
       redirect_to @block2_survey_response, notice: "Encuesta actualizada correctamente."
     else
@@ -38,17 +32,30 @@ class Block2SurveyResponsesController < ApplicationController
     end
   end
 
+  def index
+    @block2_survey_responses = Block2SurveyResponse.includes(:user).order(created_at: :desc)
+  end
 
   private
 
+  def set_block2_survey_response
+    @block2_survey_response = Block2SurveyResponse.find(params[:id])
+  end
 
-  def require_admin
-    unless Current.user&.admin?
-      redirect_to root_path, alert: "Acceso restringido solo para administradores."
+  def prevent_locked_edit
+    if Current.user.locked?
+      redirect_to block2_survey_response_path(@block2_survey_response), alert: "No puedes editar esta encuesta."
     end
   end
 
+  def require_admin
+    redirect_to root_path, alert: "Acceso restringido solo para administradores." unless Current.user&.admin?
+  end
+
   def block2_survey_response_params
-    params.require(:block2_survey_response).permit(:q1, :q2, :q3, :q4, :q5, :q6, :qoa1, :qoa2, :qoa3, :qoa4)
+    params.require(:block2_survey_response).permit(
+      :q1, :q2, :q3, :q4, :q5, :q6,
+      :qoa1, :qoa2, :qoa3, :qoa4
+    )
   end
 end

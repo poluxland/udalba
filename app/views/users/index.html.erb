@@ -21,6 +21,8 @@
       <th>Área</th>
       <th>Sup</th>
       <th>Admin</th>
+      <th>Bloqueado</th>
+
     </tr>
   </thead>
   <tbody>
@@ -37,6 +39,8 @@
         <td><%= user.area %></td>
         <td><%= user.supervisor ? "✅" : "❌" %></td>
 <td><%= user.admin ? "✅" : "❌" %></td>
+<td><%= user.locked? ? "🔒" : "🔓" %></td>
+
 
       </tr>
     <% end %>
