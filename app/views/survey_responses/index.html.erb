@@ -2,43 +2,67 @@
 
 <table class="table table-bordered table-striped table-sm">
   <thead>
-    <tr>
-      <th>Usuario</th>
-      <th>Fecha</th>
-      <th>Q1</th>
-      <th>Q2</th>
-      <th>Q3</th>
-      <th>Q4</th>
-      <th>Q5</th>
-      <th>Q6</th>
-      <th>Q7</th>
-      <th>Q8</th>
-      <th>Q17</th>
-      <th>Q18</th>
-      <th>...</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
+  <tr>
+    <th>Usuario</th>
+    <th>Fecha</th>
+    <th>¿Conoce la misión?</th>
+    <th>¿Conoce la visión?</th>
+    <th>¿Conoce los valores?</th>
+    <th>¿Funciones alineadas a la misión?</th>
+    <th>¿Misión considera transformación digital?</th>
+    <th>¿Modalidades virtuales coherentes?</th>
+    <th>¿Multimodalidad fortalece misión?</th>
+    <th>¿Explicitar multimodalidad?</th>
+    <th>¿Aspectos prioritarios (innovación)?</th>
+    <th>¿Aspectos prioritarios (formativos)?</th>
+    <th>¿Transformación digital y multimodalidad (riesgos)?</th>
+    <th>¿Modalidades multimodales mejoran pertinencia?</th>
+    <th>¿Compromiso con modalidades flexibles?</th>
+    <th>¿Virtualidad aporta a inclusión y calidad?</th>
+    <th>¿Multimodalidad favorece equidad?</th>
+    <th>¿Virtualidad y compromiso social?</th>
+    <th>¿Innovación educativa en la visión?</th>
+    <th>¿Reflejar compromiso social?</th>
+    <th>¿Visión y desarrollo del conocimiento?</th>
+    <th>¿Incorporar integridad como valor?</th>
+    <th>¿Está alineado con misión y visión?</th>
+    <th>¿Cómo la integridad refuerza los valores?</th>
+    <th>Acciones</th>
+  </tr>
+</thead>
+
   <tbody>
-    <% @survey_responses.each do |response| %>
-      <tr>
-        <td><%= response.user.email_address %></td>
-        <td><%= l(response.created_at, format: :short) %></td>
-        <td><%= response.q1 %></td>
-        <td><%= response.q2 %></td>
-        <td><%= response.q3 %></td>
-        <td><%= response.q4 %></td>
-        <td><%= response.q5 %></td>
-        <td><%= response.q6 %></td>
-        <td><%= response.q7 %></td>
-        <td><%= response.q8 %></td>
-        <td><%= response.q17 %></td>
-        <td><%= response.q18 %></td>
-        <td>...</td>
-        <td>
-          <%= link_to "Ver", survey_response_path(response), class: "btn btn-sm btn-primary" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
+  <% @survey_responses.each do |response| %>
+    <tr>
+      <td><%= response.user.email_address rescue "N/A" %></td>
+      <td><%= l(response.created_at, format: :short) %></td>
+      <td><%= response.q1 %></td>
+      <td><%= response.q2 %></td>
+      <td><%= response.q3 %></td>
+      <td><%= response.q4 %></td>
+      <td><%= response.q5 %></td>
+      <td><%= response.q6 %></td>
+      <td><%= response.q7 %></td>
+      <td><%= response.q8 %></td>
+      <td><%= response.q17 %></td>
+      <td><%= response.q18 %></td>
+      <td><%= response.q20 %></td>
+      <td><%= response.q19 %></td>
+      <td><%= response.q10 %></td>
+      <td><%= response.q11 %></td>
+      <td><%= response.q12 %></td>
+      <td><%= response.q13 %></td>
+      <td><%= response.q14 %></td>
+      <td><%= response.q15 %></td>
+      <td><%= response.q16 %></td>
+      <td><%= response.q21 %></td>
+      <td><%= response.q22 %></td>
+      <td><%= response.q23 %></td>
+      <td>
+        <%= link_to "Ver", survey_response_path(response), class: "btn btn-sm btn-primary" %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+
 </table>
