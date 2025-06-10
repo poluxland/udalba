@@ -1,21 +1,43 @@
 <div class="container mt-4">
-  <h2 class="mb-4">Respuestas Bloque 2</h2>
-  <table class="table table-bordered">
-    <thead>
+  <h2 class="mb-2">Respuestas Bloque 2</h2>
+  <p class="mb-4 text-muted">
+    A continuación se presentan todas las respuestas recopiladas en el segundo bloque de la encuesta institucional sobre el futuro de la Universidad del Alba al año 2050.
+  </p>
+
+  <table class="table table-bordered table-sm">
+    <thead class="table-light">
       <tr>
         <th>ID</th>
         <th>Usuario</th>
         <th>Fecha</th>
-        <th></th>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th>Q4</th>
+        <th>Q5</th>
+        <th>Q6</th>
+        <th>QOA1</th>
+        <th>QOA2</th>
+        <th>QOA3</th>
+        <th>QOA4</th>
       </tr>
     </thead>
     <tbody>
       <% @block2_survey_responses.each do |r| %>
         <tr>
           <td><%= r.id %></td>
-          <td><%= r.user.email_address if r.user %></td>
+          <td><%= r.user&.email_address || "N/A" %></td>
           <td><%= r.created_at.strftime("%d/%m/%Y %H:%M") %></td>
-          <td><%= link_to 'Ver', block2_survey_response_path(r), class: "btn btn-sm btn-outline-primary" %></td>
+          <td><%= r.q1 %></td>
+          <td><%= r.q2 %></td>
+          <td><%= r.q3 %></td>
+          <td><%= r.q4 %></td>
+          <td><%= r.q5 %></td>
+          <td><%= r.q6 %></td>
+          <td><%= simple_format(r.qoa1) %></td>
+          <td><%= simple_format(r.qoa2) %></td>
+          <td><%= simple_format(r.qoa3) %></td>
+          <td><%= simple_format(r.qoa4) %></td>
         </tr>
       <% end %>
     </tbody>
