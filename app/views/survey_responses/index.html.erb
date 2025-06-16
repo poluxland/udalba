@@ -5,31 +5,33 @@
   <tr>
     <th>Usuario</th>
     <th>Fecha</th>
-    <th>¿Conoce la misión?</th>
-    <th>¿Conoce la visión?</th>
-    <th>¿Conoce los valores?</th>
-    <th>¿Funciones alineadas a la misión?</th>
-    <th>¿Misión considera transformación digital?</th>
-    <th>¿Modalidades virtuales coherentes?</th>
-    <th>¿Multimodalidad fortalece misión?</th>
-    <th>¿Explicitar multimodalidad?</th>
-    <th>¿Aspectos prioritarios (innovación)?</th>
-    <th>¿Aspectos prioritarios (formativos)?</th>
-    <th>¿Transformación digital y multimodalidad (riesgos)?</th>
-    <th>¿Modalidades multimodales mejoran pertinencia?</th>
-    <th>¿Compromiso con modalidades flexibles?</th>
-    <th>¿Virtualidad aporta a inclusión y calidad?</th>
-    <th>¿Multimodalidad favorece equidad?</th>
-    <th>¿Virtualidad y compromiso social?</th>
-    <th>¿Innovación educativa en la visión?</th>
-    <th>¿Reflejar compromiso social?</th>
-    <th>¿Visión y desarrollo del conocimiento?</th>
-    <th>¿Incorporar integridad como valor?</th>
-    <th>¿Está alineado con misión y visión?</th>
-    <th>¿Cómo la integridad refuerza los valores?</th>
+    <th>1. ¿Conoce la misión?</th>
+    <th>2. ¿Conoce la visión?</th>
+    <th>3. ¿Conoce los valores?</th>
+    <th>4. ¿Funciones alineadas a la misión?</th>
+    <th>5. ¿Misión considera transformación digital?</th>
+    <th>6. ¿Modalidades virtuales coherentes?</th>
+    <th>7. ¿Multimodalidad fortalece misión?</th>
+    <th>8. ¿Explicitar multimodalidad?</th>
+    <th>9. ¿Enfoque apropiado para incorporar virtualidad?</th>
+    <th>10. ¿Compromiso con modalidades flexibles?</th>
+    <th>11. ¿Virtualidad aporta a inclusión y calidad?</th>
+    <th>12. ¿Multimodalidad favorece equidad?</th>
+    <th>13. ¿Virtualidad y compromiso social?</th>
+    <th>14. ¿Innovación educativa en la visión?</th>
+    <th>15. ¿Reflejar compromiso social?</th>
+    <th>16. ¿Visión y desarrollo del conocimiento?</th>
+    <th>17. ¿Aspectos prioritarios (innovación)?</th>
+    <th>18. ¿Aspectos prioritarios (formativos)?</th>
+    <th>19. ¿Modalidades multimodales mejoran pertinencia?</th>
+    <th>20. ¿Transformación digital y multimodalidad (riesgos)?</th>
+    <th>21. ¿Incorporar integridad como valor?</th>
+    <th>22. ¿Está alineado con misión y visión?</th>
+    <th>23. ¿Cómo la integridad refuerza los valores?</th>
     <th>Acciones</th>
   </tr>
 </thead>
+
 
   <tbody>
   <% @survey_responses.each do |response| %>
@@ -44,6 +46,7 @@
       <td><%= response.q6 %></td>
       <td><%= response.q7 %></td>
       <td><%= response.q8 %></td>
+      <td><%= response.q9 %></td>
       <td><%= response.q17 %></td>
       <td><%= response.q18 %></td>
       <td><%= response.q20 %></td>
